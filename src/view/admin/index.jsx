@@ -1,11 +1,22 @@
-import React from 'react'
-import SidebarMenu from '../../components/SideBarMenu'
+import SidebarMenu from '../../components/SideBarMenu';
 
-export default function index() {
+export default function Dashboard() {
     return (
         <div>
-            <SidebarMenu />
-            <h1>halaman admin</h1>
+            <div>
+                <div>
+                    <SidebarMenu />
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <h1 className='font-semibold'>
+                                halaman admin
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

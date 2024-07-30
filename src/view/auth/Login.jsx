@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import api from '../../service/api.js'
-import Cookies from 'js-cookie'
+import api from '../../service/api.js';
 import { AuthContext } from '../../context/AuthContext';
 
 export default function Login() {
@@ -23,8 +22,9 @@ export default function Login() {
             });
 
             const { token, role } = response.data.data;
-            
-            Cookies.set('token', token);
+
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', JSON.stringify({ username, role }));
             setIsAuthenticated(true);
             setUserRole(role);
 

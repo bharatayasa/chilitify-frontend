@@ -12,9 +12,7 @@ export default function NavbarMrnu() {
 
         Cookies.remove('token');
         Cookies.remove('user');
-
         setIsAuthenticated(false);
-
         navigate("/login", { replace: true });
     }
 
@@ -26,7 +24,6 @@ export default function NavbarMrnu() {
             <div>
                 <div>
                     <Link to="/admin/dashboard">Dashboard</Link>
-
                     <Link to="/admin/users">Users</Link>
                     <a onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
                 </div>
