@@ -1,13 +1,12 @@
-import React from "react"
+import AppRoutes from './routes';
+import { Link } from "react-router-dom";
 
-function App() {
-	return (
-		<div className="container mx-auto">
-			<h1 className="text-3xl font-semibold text-slate-600">
-				tes
-			</h1>
+export default function App() {
+return (
+	<div>
+		<div>
+			<AppRoutes />
 		</div>
+	</div>
 	)
 }
-
-export default App
