@@ -1,31 +1,42 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from '../context/AuthContext';
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import Home from "../view/banner/index";
-import Register from "../view/auth/Register";
-import Login from "../view/auth/Login";
+import Home from "../views/home/index.jsx";
+import Register from "../views/auth/Register.jsx";
+import Login from "../views/auth/Login.jsx";
 
-import Admin from "../view/admin/index";
-import UserDashboard from "../view/user/index";
+// halaman admin
+import Dashboard from "../views/admin/dashboard/index"
+
+// halaman user
+import Userpage from "../views/user/home/index"
 
 export default function AppRoutes() {
-    const { isAuthenticated, userRole } = useContext(AuthContext);
+    const { isAuthenticated } = useContext(AuthContext);
 
     return (
         <Routes>
             <Route path="/" element={<Home />} />
+
+            {/* route "/register" */}
             <Route path="/register" element={
-                isAuthenticated ? <Navigate to={`/${userRole}/dashboard`} replace /> : <Register />
+                isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Register />
             } />
+
+            {/* route "/login" */}
             <Route path="/login" element={
-                isAuthenticated ? <Navigate to={`/${userRole}/dashboard`} replace /> : <Login />
+                isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Login />
             } />
+
+             {/* route "/admin/dashboard" */}
             <Route path="/admin/dashboard" element={
-                isAuthenticated && userRole === 'admin' ? <Admin /> : <Navigate to="/login" replace />
+                isAuthenticated ? <Dashboard /> : <Navigate to="/login" replace />
             } />
-            <Route path="/user/dashboard" element={
-                isAuthenticated && userRole === 'user' ? <UserDashboard /> : <Navigate to="/login" replace />
+            
+            {/* route "/admin/dashboard" */}
+            <Route path="/user/home" element={
+                isAuthenticated ? <Userpage /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );

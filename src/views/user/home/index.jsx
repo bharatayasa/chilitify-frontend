@@ -1,4 +1,4 @@
-import SidebarMenu from '../../components/SideBarMenu';
+import SidebarMenu from '../../../components/SideBarMenu';
 
 export default function Dashboard() {
     return (
@@ -10,9 +10,10 @@ export default function Dashboard() {
                 <div>
                     <div>
                         <div>
-                            <h1 className='font-semibold'>
-                                halaman admin
-                            </h1>
+                            HALAMAN USER
+                        </div>
+                        <div>
+                            Selamat Datang, <strong></strong>
                         </div>
                     </div>
                 </div>

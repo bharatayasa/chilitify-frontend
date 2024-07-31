@@ -1,24 +1,25 @@
 import React, { createContext, useState, useEffect } from 'react';
+
+import Cookies from 'js-cookie';
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userRole, setUserRole] = useState('');
+    const [isAuthenticated, setIsAuthenticated] = useState(!!Cookies.get('token'));
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
+        const handleTokenChange = () => {
+            setIsAuthenticated(!!Cookies.get('token'));
+        };
 
-        if (token && user) {
-            setIsAuthenticated(true);
-            setUserRole(JSON.parse(user).role);
-        } else {
-            setIsAuthenticated(false);
-        }
+        window.addEventListener('storage', handleTokenChange);
+        return () => {
+            window.removeEventListener('storage', handleTokenChange);
+        };
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, userRole, setUserRole }}>
+        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
             {children}
         </AuthContext.Provider>
     );
