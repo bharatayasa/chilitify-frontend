@@ -14,14 +14,14 @@ export default function Dashboard() {
 
     return (
         <div>
-            <div>
+            <div className='flex'>
                 <div>
                     <SidebarMenu />
                 </div>
-                <div>
+                <div className="flex-1 ml-80 p-6 overflow-auto bg-white rounded-lg">
                     <div>
                         <div>
-                            HALAMAN ADMIN
+                            DASHBOARD NYUSUL YA YANG
                         </div>
                         <div>
                             Selamat Datang, <strong>{username?.username}</strong>

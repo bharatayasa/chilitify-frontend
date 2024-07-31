@@ -2,13 +2,11 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import Cookies from 'js-cookie'
-
 import { AuthContext } from '../../context/AuthContext';
 
 export default function Login() {
     const navigate = useNavigate();
-
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setIsAuthenticated, setUserRole } = useContext(AuthContext);
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -23,13 +21,20 @@ export default function Login() {
                 username: username,
                 password: password,
             });
+
+            const { token, user } = response.data.data;
             
-            Cookies.set('token', response.data.data.token);
-            Cookies.set('user', JSON.stringify(response.data.data.user));
-            
+            Cookies.set('token', token);
+            Cookies.set('user', JSON.stringify(user));
+
             setIsAuthenticated(true);
-            
-            navigate("/admin/dashboard", { replace: true });
+            setUserRole(user.role);
+
+            if (user.role === 'admin') {
+                navigate("/admin/dashboard", { replace: true });
+            } else if (user.role === 'user') {
+                navigate("/user/home", { replace: true });
+            }
         } catch (error) {
             if (error.response) {
                 setValidation(error.response.data);
@@ -72,7 +77,7 @@ export default function Login() {
 
                             <div>
                                 <label>Password</label>
-                                <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                             </div>
                             <button type="submit">LOGIN</button>
                         </form>
