@@ -149,7 +149,7 @@ export default function UsersEdit({ isOpen, onClose, userId }) {
                             <button
                                 type="submit"
                                 className="btn btn-primary btn-outline">
-                                Save
+                                Simpan
                             </button>
                         </div>
                     </form>
