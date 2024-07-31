@@ -12,6 +12,7 @@ import UserList from "../views/admin/userData/index"
 import DeskripsiData from '../views/admin/deskripsiData/index.jsx';
 import HasilDeteksi from '../views/admin/hasilDeteksi/index.jsx';
 import CreateUser from '../views/admin/userData/CreateUser.jsx';
+import UsersEdit from '../views/admin/userData/EditUser.jsx';
 
 // halaman user
 import Userpage from "../views/user/home/index"
@@ -43,6 +44,9 @@ export default function AppRoutes() {
                 isAuthenticated && userRole === 'admin' ? <CreateUser /> : <Navigate to="/login" replace />
             } /> */}
             {/*  */}
+            {/* <Route path="/admin/user/edit/:id" element={
+                isAuthenticated && userRole === 'admin' ? <UsersEdit /> : <Navigate to="/login" replace />
+            } /> */}
             <Route path="/admin/deskripsi" element={
                 isAuthenticated && userRole === 'admin' ? <DeskripsiData /> : <Navigate to="/login" replace />
             } />

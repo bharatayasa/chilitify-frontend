@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
 import Modal from './CreateUser.jsx';
+import UsersEdit from './EditUser.jsx';
 
 export default function UserList() {
     const [users, setUsers] = useState([]);
@@ -12,6 +13,8 @@ export default function UserList() {
     const [searchCategory, setSearchCategory] = useState('username');
     const [currentPage, setCurrentPage] = useState(1);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [selectedUserId, setSelectedUserId] = useState(null);
     const usersPerPage = 10;
 
     const openModal = () => setIsModalOpen(true);
@@ -24,19 +27,30 @@ export default function UserList() {
             try {
                 const response = await api.get('/user');
                 setUsers(response.data.data);
-                setFilteredUsers(response.data.data);
+                setFilteredUsers(response.data.data)
             } catch (error) {
                 console.error("There was an error fetching the users!", error);
             }
         } else {
             console.error("Token is not available!");
         }
-    }
-    
+    };
+
     const handleModalClose = () => {
         setIsModalOpen(false);
         fetchDataUsers();
-    }
+    };
+
+    const handleEditClick = (userId) => {
+        setSelectedUserId(userId);
+        setIsEditModalOpen(true);
+    };
+
+    const handleCloseEditModal = () => {
+        setIsEditModalOpen(false);
+        setSelectedUserId(null);
+        fetchDataUsers(); 
+    };
 
     useEffect(() => {
         fetchDataUsers();
@@ -103,7 +117,7 @@ export default function UserList() {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             placeholder={`Cari berdasarkan ${searchCategory}`}
-                            className="btn bg-slate-600/15 join-item rounded-r-md w-full shadow-lg "
+                            className="btn bg-slate-600/15 join-item rounded-r-md w-full shadow-lg"
                         />
                     </div>
                 </div>
@@ -150,7 +164,7 @@ export default function UserList() {
                                             </td>
                                             <td className="px-6 py-4 text-center">
                                                 <div className='flex justify-center gap-3'>
-                                                    <Link to={`/admin/user/edit/${user.id}`} className="btn btn-outline btn-primary">Edit</Link>
+                                                    <button onClick={() => handleEditClick(user.id)} className="btn btn-outline btn-primary">Edit</button>
                                                     <button className="btn btn-outline btn-secondary">Delete</button>
                                                 </div>
                                             </td>
@@ -168,17 +182,25 @@ export default function UserList() {
                         </tbody>
                     </table>
                 </div>
-                        <div className='text-lg mt-5'>
-                            <div className="flex gap-2 justify-center">
-                                <div className='btn btn-outline btn-success'>
-                                    <button onClick={handlePrevPage} disabled={currentPage === 1}>Sebelumnya</button>
-                                </div>
-                                <div className='btn btn-outline btn-success'>
-                                    <button onClick={handleNextPage} disabled={indexOfLastUser >= filteredUsers.length}>Berikutnya</button>
-                                </div>
-                            </div>
+                <div className='text-lg mt-5'>
+                    <div className="flex gap-2 justify-center">
+                        <div className='btn btn-outline btn-success'>
+                            <button onClick={handlePrevPage} disabled={currentPage === 1}>Sebelumnya</button>
                         </div>
+                        <div className='btn btn-outline btn-success'>
+                            <button onClick={handleNextPage} disabled={indexOfLastUser >= filteredUsers.length}>Berikutnya</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {isEditModalOpen && (
+                <UsersEdit 
+                    isOpen={isEditModalOpen} 
+                    onClose={handleCloseEditModal}
+                    userId={selectedUserId}
+                />
+            )}
         </div>
-    )
+    );
 }
