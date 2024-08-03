@@ -1,6 +1,5 @@
 import SidebarMenu from '../../../components/SideBarMenu.jsx';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
 import Modal from './CreateUser.jsx';
@@ -27,7 +26,7 @@ export default function UserList() {
             try {
                 const response = await api.get('/user');
                 setUsers(response.data.data);
-                setFilteredUsers(response.data.data)
+                setFilteredUsers(response.data.data);
             } catch (error) {
                 console.error("There was an error fetching the users!", error);
             }
@@ -68,7 +67,7 @@ export default function UserList() {
     const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
     const handleNextPage = () => {
-        if (indexOfLastUser < filteredUsers.length) {
+        if (currentPage < Math.ceil(filteredUsers.length / usersPerPage)) {
             setCurrentPage(currentPage + 1);
         }
     };
@@ -78,6 +77,40 @@ export default function UserList() {
             setCurrentPage(currentPage - 1);
         }
     };
+
+    const deleteUser = async (id) => {
+        const token = Cookies.get('token');
+
+        if (token) {
+            api.defaults.headers.common['Authorization'] = token;
+
+            try {
+                await api.delete(`/user/${id}`);
+                fetchDataUsers();
+            } catch (error) {
+                console.error("There was an error deleting the user!", error);
+            }
+        } else {
+            console.error("Token is not available!");
+        }
+    }
+
+    const restoreUser = async (id) => {
+        const token = Cookies.get('token');
+
+        if (token) {
+            api.defaults.headers.common['Authorization'] = token;
+
+            try {
+                await api.put(`/user/restore/${id}`);
+                fetchDataUsers();
+            } catch (error) {
+                console.error("There was an error restoring the user!", error);
+            }
+        } else {
+            console.error("Token is not available!");
+        }
+    }
 
     return (
         <div className="flex h-screen">
@@ -159,13 +192,14 @@ export default function UserList() {
                                                     <p>Updated</p>{user.updated_at}
                                                 </div>
                                                 <div className='flex gap-2 text-secondary'>
-                                                    <p>Deleted</p>{user.deleted_at}
+                                                    <p>nonaktif</p>{user.deleted_at}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4 text-center">
                                                 <div className='flex justify-center gap-3'>
                                                     <button onClick={() => handleEditClick(user.id)} className="btn btn-outline btn-primary">Edit</button>
-                                                    <button className="btn btn-outline btn-secondary">Delete</button>
+                                                    <button onClick={() => deleteUser(user.id)} className="btn btn-outline btn-secondary">nonaktif</button>
+                                                    <button onClick={() => restoreUser(user.id)} className="btn btn-outline btn-success">aktif</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -185,10 +219,14 @@ export default function UserList() {
                 <div className='text-lg mt-5'>
                     <div className="flex gap-2 justify-center">
                         <div className='btn btn-outline btn-success'>
-                            <button onClick={handlePrevPage} disabled={currentPage === 1}>Sebelumnya</button>
+                            <button onClick={handlePrevPage} disabled={currentPage === 1}>
+                                Sebelumnya
+                            </button>
                         </div>
                         <div className='btn btn-outline btn-success'>
-                            <button onClick={handleNextPage} disabled={indexOfLastUser >= filteredUsers.length}>Berikutnya</button>
+                            <button onClick={handleNextPage} disabled={currentPage >= Math.ceil(filteredUsers.length / usersPerPage)}>
+                                Berikutnya
+                            </button>
                         </div>
                     </div>
                 </div>
