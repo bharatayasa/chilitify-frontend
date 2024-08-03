@@ -55,6 +55,41 @@ export default function DeskripsiData() {
         }
     };
 
+    const deleteDescription = async (id) => {
+        const token = Cookies.get('token');
+
+        if (token) {
+            api.defaults.headers.common['Authorization'] = token;
+
+            try {
+                await api.delete(`/description/${id}`);
+                fetchDataDescription();
+            } catch (error) {
+                console.error("There was an error deleting the description!", error);
+            }
+        } else {
+            console.error("Token is not available!");
+        }
+    }
+
+
+    const restoreDescription = async (id) => {
+        const token = Cookies.get('token');
+
+        if (token) {
+            api.defaults.headers.common['Authorization'] = token;
+
+            try {
+                await api.put(`/description/restore/${id}`);
+                fetchDataDescription();
+            } catch (error) {
+                console.error("There was an error restoring the description!", error);
+            }
+        } else {
+            console.error("Token is not available!");
+        }
+    }
+
     return (
         <div>
             <div className='lg:flex'>
@@ -72,8 +107,7 @@ export default function DeskripsiData() {
                                 id="searchCategory"
                                 value={searchCategory}
                                 onChange={(e) => setSearchCategory(e.target.value)}
-                                className="input input-bordered join-item mr-1 shadow-lg"
-                            >
+                                className="input input-bordered join-item mr-1 shadow-lg">
                                 <option value="calss">class</option>
                                 <option value="description">description</option>
                             </select>
@@ -91,11 +125,10 @@ export default function DeskripsiData() {
                             <thead>
                                 <tr>
                                     <th className="font-semibold text-lg">no</th>
-                                    <th className="font-semibold text-lg">id</th>
                                     <th className="font-semibold text-lg">class</th>
                                     <th className="font-semibold text-lg text-center">description</th>
                                     <th className="font-semibold text-lg text-center">prevention</th>
-                                    <th className="font-semibold text-lg text-center">deleted at</th>
+                                    <th className="font-semibold text-lg text-center">date</th>
                                     <th className="font-semibold text-lg text-center">aksi</th>
                                 </tr>
                             </thead>
@@ -105,7 +138,7 @@ export default function DeskripsiData() {
                                         ? currentDescriptions.map((description, index) => (
                                             <tr key={description.id} className="hover transition duration-200">
                                                 <td className="px-5 py-3 truncate">{indexOfFirstDescription + index + 1}</td>
-                                                <td className="px-5 py-3 truncate">{description.id}</td>
+
                                                 <td className="px-5 py-3 truncate font-bold">{description.calss}</td>
 
                                                 <td className="px-5 py-3 truncate ">
@@ -120,14 +153,24 @@ export default function DeskripsiData() {
                                                     </div>
                                                 </td>
 
-                                                <td className="px-5 py-3 truncate text-secondary/50">{description.deleted_at}</td>
+                                                <td className="px-5 py-3 truncate">
+                                                    <div className='flex gap-2 text-success'>
+                                                        <p>Created: </p>{description.created_at}
+                                                    </div>
+                                                    <div className='flex gap-2 text-primary'>
+                                                        <p>Updated: </p>{description.updated_at}
+                                                    </div>
+                                                    <div className='flex gap-2 text-secondary'>
+                                                        <p>nonaktif: </p>{description.deleted_at}
+                                                    </div>
+                                                </td>
 
                                                 <td className='px-5 py-3 truncat'>
                                                     <div className=''>
                                                         <div className='flex flex-col gap-2'>
                                                             <button className="btn btn-outline btn-primary">Edit</button>
-                                                            <button className="btn btn-outline btn-secondary">Nonaktif</button>
-                                                            <button className="btn btn-outline btn-success">Restore</button>
+                                                            <button onClick={() => deleteDescription(description.id)} className="btn btn-outline btn-secondary">Nonaktif</button>
+                                                            <button onClick={() => restoreDescription(description.id)} className="btn btn-outline btn-success">Restore</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -144,16 +187,6 @@ export default function DeskripsiData() {
                                 }
                             </tbody>
                         </table>
-                    </div>
-                    <div className='text-lg mt-5'>
-                        <div className="flex gap-2 justify-center">
-                            <div className='btn btn-outline btn-success'>
-                                <button onClick={handlePrevPage} disabled={currentPage === 1}>Sebelumnya</button>
-                            </div>
-                            <div className='btn btn-outline btn-success'>
-                                <button onClick={handleNextPage} disabled={currentPage >= Math.ceil(filteredDescriptions.length / descriptionsPerPage)}>Berikutnya</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
