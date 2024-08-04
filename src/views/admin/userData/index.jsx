@@ -217,7 +217,7 @@ export default function UserList() {
                     </table>
                 </div>
                 <div className='text-lg mt-5'>
-                    <div className="flex gap-2 justify-center">
+                    <div className="flex gap-2 justify-center join grid-cols-2">
                         <div className='btn btn-outline btn-success'>
                             <button onClick={handlePrevPage} disabled={currentPage === 1}>
                                 Sebelumnya

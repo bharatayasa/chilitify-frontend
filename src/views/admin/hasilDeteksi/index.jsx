@@ -11,7 +11,6 @@ export default function HasilDeteksi() {
     const [currentPage, setCurrentPage] = useState(1);
     const predictionsPerPage = 10;
 
-    // Fetch data from API
     const fetchDataPredicted = async () => {
         const token = Cookies.get('token');
         if (token) {
