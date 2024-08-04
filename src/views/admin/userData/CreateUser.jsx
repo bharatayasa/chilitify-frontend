@@ -65,7 +65,7 @@ export default function CreateUser({ isOpen, onClose }) {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 placeholder="Username"
-                                className="input mt-1 block w-full border border-gray-300 focus:border-primary rounded-lg shadow-sm"
+                                className="input mt-1 block w-full border focus:border-primary rounded-lg shadow-sm"
                                 required
                             />
                         </div>
@@ -77,7 +77,7 @@ export default function CreateUser({ isOpen, onClose }) {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="Name"
-                                className="input mt-1 block w-full border border-gray-300 focus:border-primary rounded-lg shadow-sm"
+                                className="input mt-1 block w-full border focus:border-primary rounded-lg shadow-sm"
                                 required
                             />
                         </div>
@@ -89,7 +89,7 @@ export default function CreateUser({ isOpen, onClose }) {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="E-mail"
-                                className="input mt-1 block w-full border border-gray-300 focus:border-primary rounded-lg shadow-sm"
+                                className="input mt-1 block w-full border focus:border-primary rounded-lg shadow-sm"
                                 required
                             />
                         </div>
@@ -101,7 +101,7 @@ export default function CreateUser({ isOpen, onClose }) {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Password"
-                                className="input mt-1 block w-full border border-gray-300 focus:border-primary rounded-lg shadow-sm"
+                                className="input mt-1 block w-full border focus:border-primary rounded-lg shadow-sm"
                                 required
                             />
                         </div>

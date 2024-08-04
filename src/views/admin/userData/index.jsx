@@ -2,7 +2,7 @@ import SidebarMenu from '../../../components/SideBarMenu.jsx';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
-import Modal from './CreateUser.jsx';
+import AddUser from './CreateUser.jsx';
 import UsersEdit from './EditUser.jsx';
 
 export default function UserList() {
@@ -129,7 +129,7 @@ export default function UserList() {
                             Add User
                         </div>
                     </div>
-                    <Modal isOpen={isModalOpen} onClose={handleModalClose} />
+                    <AddUser isOpen={isModalOpen} onClose={handleModalClose} />
                 </div>
 
                 <div>

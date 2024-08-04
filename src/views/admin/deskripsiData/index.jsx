@@ -2,6 +2,8 @@ import SidebarMenu from '../../../components/SideBarMenu.jsx';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
+import CreateDeskripsi from './CreateDeskripsi.jsx';
+import EditDeskripsi from './EditDeskripsi.jsx';
 
 export default function DeskripsiData() {
     const [descriptions, setDescriptions] = useState([]);
@@ -10,6 +12,11 @@ export default function DeskripsiData() {
     const [searchCategory, setSearchCategory] = useState('calss');
     const [currentPage, setCurrentPage] = useState(1);
     const descriptionsPerPage = 10;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [selectedDescId, setSelectedDescId] = useState(null);
+
+    const openModal = () => setIsModalOpen(true);
 
     const fetchDataDescription = async () => {
         const token = Cookies.get('token');
@@ -32,6 +39,22 @@ export default function DeskripsiData() {
         fetchDataDescription();
     }, []);
 
+    const handleCloseEditModal = () => {
+        setIsEditModalOpen(false);
+        setSelectedDescId(null);
+        fetchDataDescription();
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+        fetchDataDescription();
+    };
+
+    const handleEditClick = (descId) => {
+        setSelectedDescId(descId);
+        setIsEditModalOpen(true);
+    };
+
     useEffect(() => {
         setFilteredDescriptions(descriptions.filter(description =>
             description[searchCategory]?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -42,18 +65,6 @@ export default function DeskripsiData() {
     const indexOfLastDescription = currentPage * descriptionsPerPage;
     const indexOfFirstDescription = indexOfLastDescription - descriptionsPerPage;
     const currentDescriptions = filteredDescriptions.slice(indexOfFirstDescription, indexOfLastDescription);
-
-    const handleNextPage = () => {
-        if (currentPage < Math.ceil(filteredDescriptions.length / descriptionsPerPage)) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
-
-    const handlePrevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
 
     const deleteDescription = async (id) => {
         const token = Cookies.get('token');
@@ -100,6 +111,15 @@ export default function DeskripsiData() {
                     <h1 className="text-2xl font-bold text-center">
                         Kelola Data Deskripsi
                     </h1>
+
+                    <div>
+                        <div className='btn btn-outline btn-success shadow-lg w-[106px]'>
+                            <div onClick={openModal}>
+                                Add Description
+                            </div>
+                        </div>
+                        <CreateDeskripsi isOpen={isModalOpen} onClose={handleModalClose}/>
+                    </div>
 
                     <div>
                         <div className="mb-4 pt-2 join">
@@ -153,7 +173,7 @@ export default function DeskripsiData() {
                                                     </div>
                                                 </td>
 
-                                                <td className="px-5 py-3 truncate">
+                                                <td className="px-5 py-3 truncate flex flex-col gap-5 pt-14">
                                                     <div className='flex gap-2 text-success'>
                                                         <p>Created: </p>{description.created_at}
                                                     </div>
@@ -168,9 +188,9 @@ export default function DeskripsiData() {
                                                 <td className='px-5 py-3 truncat'>
                                                     <div className=''>
                                                         <div className='flex flex-col gap-2'>
-                                                            <button className="btn btn-outline btn-primary">Edit</button>
-                                                            <button onClick={() => deleteDescription(description.id)} className="btn btn-outline btn-secondary">Nonaktif</button>
                                                             <button onClick={() => restoreDescription(description.id)} className="btn btn-outline btn-success">Restore</button>
+                                                            <button onClick={() => handleEditClick(description.id)} className="btn btn-outline btn-primary">Edit</button>
+                                                            <button onClick={() => deleteDescription(description.id)} className="btn btn-outline btn-secondary">Nonaktif</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -190,6 +210,13 @@ export default function DeskripsiData() {
                     </div>
                 </div>
             </div>
+            {isEditModalOpen && (
+                <EditDeskripsi 
+                    isOpen={isEditModalOpen} 
+                    onClose={handleCloseEditModal}
+                    descId={selectedDescId}
+                />
+            )}
         </div>
     );
 }

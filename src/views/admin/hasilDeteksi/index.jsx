@@ -120,8 +120,7 @@ export default function HasilDeteksi() {
                                     <th className="font-semibold text-lg">Class</th>
                                     <th className="font-semibold text-lg">Confidence</th>
                                     <th className="font-semibold text-lg">Images</th>
-                                    <th className="font-semibold text-lg text-center">Predict At</th>
-                                    <th className="font-semibold text-lg text-center">Deleted At</th>
+                                    <th className="font-semibold text-lg text-center">Date</th> 
                                     <th className="font-semibold text-lg text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -157,14 +156,11 @@ export default function HasilDeteksi() {
                                                 </td>
 
                                                 <td className="px-5 py-3 truncate">
-                                                    <div>
-                                                        {prediction.created_at}
+                                                    <div className='text-success flex gap-2'>
+                                                        <p>predicted:</p>{prediction.created_at}
                                                     </div>
-                                                </td>
-
-                                                <td className="px-5 py-3 truncate text-secondary/50">
-                                                    <div>
-                                                        {prediction.deleted_at}
+                                                    <div className='text-secondary flex gap-2'>
+                                                        <p>deleted:</p>{prediction.deleted_at}
                                                     </div>
                                                 </td>
 
