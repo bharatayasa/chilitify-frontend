@@ -120,7 +120,7 @@ export default function HasilDeteksi() {
                                     <th className="font-semibold text-lg">Confidence</th>
                                     <th className="font-semibold text-lg">Images</th>
                                     <th className="font-semibold text-lg text-center">Date</th> 
-                                    <th className="font-semibold text-lg text-center">Actions</th>
+                                    <th className="font-semibold text-lg text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -158,13 +158,13 @@ export default function UserList() {
                     <table className="min-w-full rounded-lg table">
                         <thead>
                             <tr>
-                                <th className="font-semibold text-lg">no</th>
-                                <th className="font-semibold text-lg">id</th>
-                                <th className="font-semibold text-lg">username & e-mail</th>
-                                <th className="font-semibold text-lg">name</th>
-                                <th className="font-semibold text-lg">role</th>
-                                <th className="font-semibold text-lg text-center">date</th>
-                                <th className="font-semibold text-lg text-center">actions</th>
+                                <th className="font-semibold text-lg">No</th>
+                                <th className="font-semibold text-lg">ID</th>
+                                <th className="font-semibold text-lg">Username & E-mail</th>
+                                <th className="font-semibold text-lg">Name</th>
+                                <th className="font-semibold text-lg">Role</th>
+                                <th className="font-semibold text-lg text-center">Date</th>
+                                <th className="font-semibold text-lg text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -176,10 +176,10 @@ export default function UserList() {
                                             <td className="px-5 py-3 truncate">{user.id}</td>
                                             <td className="px-5 py-3 truncate">
                                                 <div className='font-semibold flex gap-2'>
-                                                    <p>username: </p>{user.username}
+                                                    <p>Username: </p>{user.username}
                                                 </div>
                                                 <div className='flex gap-2 text-slate-400/40'>
-                                                    <p>e-mail: </p>{user.email}
+                                                    <p>E-mail: </p>{user.email}
                                                 </div>
                                             </td>
                                             <td className="px-5 py-3 truncate">{user.name}</td>

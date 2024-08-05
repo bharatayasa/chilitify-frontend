@@ -144,12 +144,12 @@ export default function DeskripsiData() {
                         <table className="min-w-full rounded-lg table">
                             <thead>
                                 <tr>
-                                    <th className="font-semibold text-lg">no</th>
-                                    <th className="font-semibold text-lg">class</th>
-                                    <th className="font-semibold text-lg text-center">description</th>
-                                    <th className="font-semibold text-lg text-center">prevention</th>
-                                    <th className="font-semibold text-lg text-center">date</th>
-                                    <th className="font-semibold text-lg text-center">aksi</th>
+                                    <th className="font-semibold text-lg">No</th>
+                                    <th className="font-semibold text-lg">Class</th>
+                                    <th className="font-semibold text-lg text-center">Description</th>
+                                    <th className="font-semibold text-lg text-center">Prevention</th>
+                                    <th className="font-semibold text-lg text-center">Date</th>
+                                    <th className="font-semibold text-lg text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
