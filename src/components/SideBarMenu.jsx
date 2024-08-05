@@ -1,10 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
-import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import Cookies from 'js-cookie';
 import { AuthContext } from '../context/AuthContext';
+import dahsboard from '../assets/svg/dashboard.svg'
 
 export default function SidebarMenu() {
     const navigate = useNavigate();
+    const location = useLocation();
     const { setIsAuthenticated } = useContext(AuthContext);
 
     const logout = () => {
@@ -26,16 +28,20 @@ export default function SidebarMenu() {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                        <li className="text-lg font-semibold">
-                            <Link to="/admin/dashboard">Dashboard</Link>
+                        <li className={`text-lg font-semibold ${location.pathname === '/admin/dashboard' ? 'bg-primary text-white rounded-lg' : ''}`}>
+                            <Link to="/admin/dashboard">
+                            <div className="flex flex-row gap-3 justify-center align-middle">
+                                    Dashboard
+                            </div>
+                            </Link>
                         </li>
-                        <li className="text-lg font-semibold">
+                        <li className={`text-lg font-semibold ${location.pathname === '/admin/users' ? 'bg-primary text-white rounded-lg' : ''}`}>
                             <Link to="/admin/users">Users</Link>
                         </li>
-                        <li className="text-lg font-semibold">
+                        <li className={`text-lg font-semibold ${location.pathname === '/admin/deskripsi' ? 'bg-primary text-white rounded-lg' : ''}`}>
                             <Link to="/admin/deskripsi">Deskripsi</Link>
                         </li>
-                        <li className="text-lg font-semibold">
+                        <li className={`text-lg font-semibold ${location.pathname === '/admin/hasil' ? 'bg-primary text-white rounded-lg' : ''}`}>
                             <Link to="/admin/hasil">Hasil</Link>
                         </li>
                         <div className="mt-32 text-center">

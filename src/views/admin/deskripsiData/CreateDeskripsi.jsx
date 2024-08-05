@@ -44,7 +44,7 @@ export default function CreateDeskripsi({ isOpen, onClose }) {
                     <button className="absolute top-5 right-5 text-gray-500 hover:text-gray-700" onClick={onClose}>
                         ✕
                     </button>
-                    <h3 className="text-lg font-bold mb-4 text-center">Tambahkan User</h3>
+                    <h3 className="text-lg font-bold mb-4 text-center">Tambahkan Deskripsi</h3>
                     {validation.errors && (
                         <div className="mb-4 text-red-500">
                             {validation.errors.map((error, index) => (

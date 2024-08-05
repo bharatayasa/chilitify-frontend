@@ -29,10 +29,10 @@ const PieChart = () => {
                     const counts = data.map(item => item.count);
                     const backgroundColors = [
                         '#a991f7',
-                        '#a855f7',
+                        '#22c55e',
                         '#37cdbe',
                         '#ec4899',
-                        '#9966FF',
+                        '#2563eb',
                         '#f43f5e'
                     ];
 
@@ -56,8 +56,8 @@ const PieChart = () => {
     }, []);
 
     return (
-        <div className="p-6 rounded-lg mx-[50px] my-[50px]">
-            <h3 className="text-xl font-bold mb-4 text-center">Total Class</h3>
+        <div className="p-6 rounded-lg mx-[50px]">
+            <h3 className="text-xl font-bold mb-4 text-center">Sum Total Class</h3>
             <div className="relative">
                 <Pie
                     data={chartData}

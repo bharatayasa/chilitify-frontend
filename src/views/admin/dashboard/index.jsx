@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 import ChartTotalClass from './ChartTotalClass';
 import TotalData from './TotalData';
+import TotalPredictNow from './totalPredictNow';
 
 export default function Dashboard() {
     const [username, setUsername] = useState([]);
@@ -29,18 +30,18 @@ export default function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div>
-                            Selamat Datang, <strong>{username?.username}</strong>
-                        </div> */}
-                        <div className=''>
-                            <div className='w-[500px]'>
-                                <div className='mt-10'>
+                        <div className='flex flex-col items-center'>
+                            <div className='bg-slate-600/15 flex align-middle mt-2 rounded-xl shadow-xl'>
+                                <div className='my-2 mx-2'>
                                     <TotalData />
                                 </div>
                             </div>
-                            <div className='w-[500px]'>
-                                <div className='bg-slate-600/15 shadow-lg rounded-lg'>
+                            <div className='flex flex-row gap-5 mt-5'>
+                                <div className='bg-slate-600/15 shadow-xl rounded-xl w-[500px]'>
                                     <ChartTotalClass />
+                                </div>
+                                <div className='bg-slate-600/15 shadow-xl rounded-xl w-[500px]'>
+                                    <TotalPredictNow />
                                 </div>
                             </div>
                         </div>
