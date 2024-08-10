@@ -2,7 +2,7 @@ import NavbarMenu from '../../../components/NavbarMenu';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 
-export default function Dashboard() {
+export default function Home() {
     const [username, setUsername] = useState([]);
     useEffect(() => {
         const userData = Cookies.get('user');

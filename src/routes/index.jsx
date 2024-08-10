@@ -13,7 +13,10 @@ import DeskripsiData from '../views/admin/deskripsiData/index.jsx';
 import HasilDeteksi from '../views/admin/hasilDeteksi/index.jsx';
 
 // halaman user
-import Userpage from "../views/user/home/index"
+import HomeUsers from "../views/user/home/index"
+import Predict from '../views/user/predict/index.jsx';
+import History from '../views/user/history/index.jsx';
+import About from '../views/user/about/index.jsx';
 
 export default function AppRoutes() {
     const { isAuthenticated, userRole } = useContext(AuthContext);
@@ -30,25 +33,32 @@ export default function AppRoutes() {
                 isAuthenticated ? <Navigate to={userRole === 'admin' ? "/admin/dashboard" : "/user/home"} replace /> : <Login />
             } />
 
-            {/*  */}
+            {/* admin */}
             <Route path="/admin/dashboard" element={
                 isAuthenticated && userRole === 'admin' ? <Dashboard /> : <Navigate to="/login" replace />
             } />
-            {/*  */}
             <Route path="/admin/users" element={
                 isAuthenticated && userRole === 'admin' ? <UserList /> : <Navigate to="/login" replace />
             } />
-            {/*  */}
             <Route path="/admin/deskripsi" element={
                 isAuthenticated && userRole === 'admin' ? <DeskripsiData /> : <Navigate to="/login" replace />
             } />
             <Route path="/admin/hasil" element={
                 isAuthenticated && userRole === 'admin' ? <HasilDeteksi /> : <Navigate to="/login" replace />
             } />
-            {/*  */}
 
+            {/* user */}
             <Route path="/user/home" element={
-                isAuthenticated && userRole === 'user' ? <Userpage /> : <Navigate to="/login" replace />
+                isAuthenticated && userRole === 'user' ? <HomeUsers /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/user/predict" element={
+                isAuthenticated && userRole === 'user' ? <Predict /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/user/history" element={
+                isAuthenticated && userRole === 'user' ? <History /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/user/about" element={
+                isAuthenticated && userRole === 'user' ? <About /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );

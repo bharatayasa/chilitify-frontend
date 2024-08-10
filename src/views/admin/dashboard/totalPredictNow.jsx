@@ -28,9 +28,9 @@ export default function TotalPredictNow() {
     return (
         <div>
             <h3 className="text-xl font-bold mt-4 text-center">Total Predict Today</h3>
-            <div className='flex flex-wrap items-center justify-center'>
+            <div className='flex flex-col items-center justify-center'>
                 {totalData.map((item, index) => (
-                    <div key={index} className='bg-primary/40 px-5 w-40 py-5 mx-5 my-5 rounded-md text-center shadow-xl'>
+                    <div key={index} className='bg-primary/40 w-96 py-1 mx-5 my-2 rounded-md text-center shadow-xl'>
                         <p className='font-semibold'>{item.class}</p>
                         <p>Jumlah: {item.count}</p>
                     </div>
