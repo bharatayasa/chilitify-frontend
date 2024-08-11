@@ -1,6 +1,7 @@
 import NavbarMenu from '../../../components/NavbarMenu';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
+import FooterUser from '../../../components/FoooterUser';
 
 export default function Home() {
     const [username, setUsername] = useState([]);
@@ -27,6 +28,9 @@ export default function Home() {
                             Selamat Datang, <strong>{username?.username}</strong>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <FooterUser />
                 </div>
             </div>
         </div>

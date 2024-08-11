@@ -66,12 +66,12 @@ export default function NavbarMenu() {
                         </ul>
                     </div>
                     <div className="flex ml-20">
-                        <a className="text-xl">Chilitify</a>
+                        <a className="text-xl font-extrabold">Chilitify</a>
                     </div>
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 lg:flex lg:gap-5">
                         <li className={`text-lg ${location.pathname === '/user/home' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
                             <div>
                                 <Link to="/user/home">Home</Link>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Layout({ children }) {
+export default function FooterUser({ children }) {
     return (
         <div className="min-h-screen flex flex-col">
             <main className="flex-grow">
@@ -8,10 +9,18 @@ export default function Layout({ children }) {
             </main>
             <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">Home</a>
-                    <a className="link link-hover">Predict</a>
-                    <a className="link link-hover">History</a>
-                    <a className="link link-hover">About</a>
+                    <a className="link link-hover">
+                        <Link to={'/user/home'}>Home</Link>
+                    </a>
+                    <a className="link link-hover">
+                        <Link to={'/user/predict'}>Predict</Link>
+                    </a>
+                    <a className="link link-hover">
+                        <Link to={'/user/history'}>History</Link>
+                    </a>
+                    <a className="link link-hover">
+                        <Link to={'/user/about'}>About</Link>
+                    </a>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavbarMenu from '../../../components/NavbarMenu';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
-import Foooter from '../../../components/Foooter.jsx';
+import FoooterUser from '../../../components/FoooterUser.jsx';
 
 const token = Cookies.get('token');
 
@@ -55,7 +55,7 @@ export default function Predict() {
             </div>
 
             <div className='flex justify-center'>
-                <form className='px-10 py-10 bg-primary/10 rounded-lg shadow-lg' onSubmit={handleSubmit}>
+                <form className='px-5 py-5 bg-primary/10 rounded-lg shadow-lg mx-5' onSubmit={handleSubmit}>
                     <div className='mb-5'>
                         <input type="file" className="file-input file-input-bordered file-input-primary w-full h-20 max-w-xl" onChange={handleFileChange} />
                     </div>
@@ -69,34 +69,28 @@ export default function Predict() {
             </div>
 
             {response && (
-                <div className=''>
-                    <div className='text-center font-semibold my-5 text-primary'>
-                        <p><strong className='font-semibold text-primary'>Class:</strong> {response.data.class}</p>
-                    </div>
-
-                    <div className='flex justify-center mb-5'>
+                <div>
+                    <div className='flex justify-center my-5'>
                         <img src={response.image_url} alt="Prediction" />
                     </div>
 
-                    <div className='flex justify-center my-5'>
-                        <p><strong className='font-semibold text-primary'>Confidence:</strong> {response.confidence}</p>
-                    </div>
-
                     <div className='flex flex-col gap-5 px-4 md:px-8 lg:px-52'>
-                        <div className='text-justify bg-primary/10 rounded-md shadow-lg p-4'>
-                            
-                            <p><strong className='font-semibold text-primary'>Description:</strong> {response.data.description}</p>
+                        <div className='text-justify bg-primary/10 rounded-md shadow-lg p-4 flex justify-between mt-5'>
+                            <div>
+                                <p><strong className='font-semibold text-primary'>Class:</strong> {response.data.class}</p>
+                                <p><strong className='font-semibold text-primary'>Confidence:</strong> {response.confidence}</p>
+                                <p><strong className='font-semibold text-primary'>Description:</strong> {response.data.description}</p>
+                            </div>
                         </div>
                         <div className='text-justify bg-primary/10 rounded-md shadow-lg p-4'>
                             <p><strong className='font-semibold text-primary'>Prevention:</strong> {response.data.prevention}</p>
                         </div>
                     </div>
-
                 </div>
             )}
 
             <div>
-                <Foooter />
+                <FoooterUser />
             </div>
         </div>
     );

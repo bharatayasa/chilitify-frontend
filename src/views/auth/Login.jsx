@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import Cookies from 'js-cookie'
 import { AuthContext } from '../../context/AuthContext';
+import NavbarLandingPage from "../../components/NavbarLandingPage.jsx";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -46,11 +47,24 @@ export default function Login() {
     };
 
     return (
-        <div>
             <div>
                 <div>
-                    <div>
-                        <h4>LOGIN</h4>
+                    <NavbarLandingPage />
+                </div>
+                <div className="hero bg-base-200 min-h-screen lg:-mt-20">
+                    <div className="hero-content flex-col lg:flex-row-reverse">
+                        <div className="text-center lg:text-left">
+                        <h1 className="text-5xl font-bold">sini Login yang, abistu kita kawin lari!</h1>
+                        <p className="py-6">
+                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        </p>
+                        <div className="flex justify-center">
+                            <button className="btn btn-primary"><Link to="/register">Register</Link></button>
+                        </div>
+                        </div>
+                        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+
                         {
                             validation.errors && (
                                 <div>
@@ -69,21 +83,27 @@ export default function Login() {
                                 </div>
                             )
                         }
-                        <form onSubmit={login}>
-                            <div>
-                                <label>Email address</label>
-                                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-                            </div>
 
-                            <div>
-                                <label>Password</label>
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                        <form className="card-body" onSubmit={login}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Username</span>
+                                </label>
+                                <input className="input input-bordered" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
                             </div>
-                            <button type="submit">LOGIN</button>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input className="input input-bordered" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                            </div>
+                            <div className="form-control mt-6">
+                                <button type="submit" className="btn btn-primary">Login</button>
+                            </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }

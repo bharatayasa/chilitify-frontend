@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import { Link } from "react-router-dom";
+import NavbarLandingPage from "../../components/NavbarLandingPage.jsx";
 
 export default function Register() {
     const navigate = useNavigate();
@@ -34,9 +35,23 @@ export default function Register() {
         <div>
             <div>
                 <div>
-                    <div>
-                        <div>
-                            <h1>REGISTER</h1>
+                    <NavbarLandingPage />
+                </div>
+                <div>
+                    <div className="hero bg-base-200 min-h-screen lg:-mt-20">
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className="text-center lg:text-left">
+                            <h1 className="text-5xl font-bold">Register now!</h1>
+                            <p className="py-6">
+                                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                                quasi. In deleniti eaque aut repudiandae et a id nisi.
+                            </p>
+                            <div className="flex justify-center">
+                                <button className="btn btn-primary"><Link to="/login">Login</Link></button>
+                            </div>
+                            </div>
+                            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+
                             {
                                 validation.errors && (
                                     <div>
@@ -48,51 +63,41 @@ export default function Register() {
                                     </div>
                                 )
                             }
-                            <form onSubmit={register}>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <label>Username</label>
-                                            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control" placeholder="Username" />
-                                        </div>
-                                    </div>
+
+                            <form className="card-body" onSubmit={register}>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Username</span>
+                                    </label>
+                                    <input className="input input-bordered" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
                                 </div>
 
-                                <div>
-                                    <div>
-                                        <div>
-                                            <label>Name</label>
-                                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Name" />
-                                        </div>
-                                    </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
+                                    </label>
+                                    <input className="input input-bordered" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
+                                </div>
+                                
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">E-Mail</span>
+                                    </label>
+                                    <input className="input input-bordered" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-Mail" />
                                 </div>
 
-                                <div>
-                                    <div>
-                                        <div>
-                                            <label>Email</label>
-                                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" />
-                                        </div>
-                                    </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span>
+                                    </label>
+                                    <input className="input input-bordered" type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
                                 </div>
 
-                                <div>
-                                    <div>
-                                        <div>
-                                            <label>Password</label>
-                                            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <button type="submit" >REGISTER</button>
-                                </div>
-                                <div>
-                                    <button><Link to="/login">Login</Link></button>
-                                    <button><Link to="/">Home</Link></button>
+                                <div className="form-control mt-6">
+                                    <button type="submit" className="btn btn-primary">Register</button>
                                 </div>
                             </form>
+                            </div>
                         </div>
                     </div>
                 </div>

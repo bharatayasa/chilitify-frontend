@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavbarMenu from '../../../components/NavbarMenu';
-import Footer from '../../../components/Foooter';
+import FooterUser from '../../../components/FoooterUser.jsx';
 import Cookies from 'js-cookie';
 import api from '../../../service/api.js';
 
@@ -127,7 +127,7 @@ export default function History() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <FooterUser />
         </div>
     );
 }

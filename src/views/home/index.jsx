@@ -1,16 +1,22 @@
-import { Link } from "react-router-dom";
+import NavbarLandingPage from "../../components/NavbarLandingPage";
+import Algoritma from "./homeComponents/Algoritma";
+import Banner from "./homeComponents/Banner";
+import Dataset from "./homeComponents/Dataset";
 
 export default function Home() {
     return (
-        <div className="container mx-auto">
-            <div className="bg-slate-500 flex gap-5">
-                <div>
-                    <Link to="/register">Register</Link>
-                </div>
-
-                <div>
-                    <Link to="/login">Login</Link>
-                </div>
+        <div>
+            <div>
+                <NavbarLandingPage />
+            </div>
+            <div>
+                <Banner />
+            </div>
+            <div>
+                <Dataset />
+            </div>
+            <div>
+                <Algoritma />
             </div>
         </div>
     )
