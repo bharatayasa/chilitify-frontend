@@ -10,13 +10,15 @@ export default function Home() {
                 <NavbarLandingPage />
             </div>
             <div>
-                <Banner />
-            </div>
-            <div>
-                <Dataset />
-            </div>
-            <div>
-                <Algoritma />
+                <section id="about">
+                    <Banner />
+                </section>
+                <section id="dataset">
+                    <Dataset />
+                </section>
+                <section id="algoritma">
+                    <Algoritma />
+                </section>
             </div>
         </div>
     )

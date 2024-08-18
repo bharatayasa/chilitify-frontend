@@ -2,7 +2,7 @@ import React from 'react'
 
 function Algoritma() {
     return (
-        <div className='-mt-20'>
+        <div id='#algoritma' className='-mt-20'>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img

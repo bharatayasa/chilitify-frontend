@@ -48,10 +48,7 @@ export default function Login() {
 
     return (
             <div>
-                <div>
-                    <NavbarLandingPage />
-                </div>
-                <div className="hero bg-base-200 min-h-screen lg:-mt-20">
+                <div className="hero bg-base-200 min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">sini Login yang, abistu kita kawin lari!</h1>
@@ -59,8 +56,9 @@ export default function Login() {
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                             quasi. In deleniti eaque aut repudiandae et a id nisi.
                         </p>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center gap-5">
                             <button className="btn btn-primary"><Link to="/register">Register</Link></button>
+                            <button className="btn btn-accent"><Link to="/">Kembali</Link></button>
                         </div>
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
