@@ -8,15 +8,19 @@ export const AuthProvider = ({ children }) => {
     const [userRole, setUserRole] = useState(Cookies.get('user') ? JSON.parse(Cookies.get('user')).role : null);
 
     useEffect(() => {
-        const handleTokenChange = () => {
-            setIsAuthenticated(!!Cookies.get('token'));
+        const updateAuthStatus = () => {
+            const token = Cookies.get('token');
             const user = Cookies.get('user');
+            setIsAuthenticated(!!token);
             setUserRole(user ? JSON.parse(user).role : null);
         };
 
-        window.addEventListener('storage', handleTokenChange);
+        updateAuthStatus();
+
+        window.addEventListener('storage', updateAuthStatus);
+
         return () => {
-            window.removeEventListener('storage', handleTokenChange);
+            window.removeEventListener('storage', updateAuthStatus);
         };
     }, []);
 
