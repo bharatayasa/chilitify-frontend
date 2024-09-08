@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import { Link } from "react-router-dom";
-import NavbarLandingPage from "../../components/NavbarLandingPage.jsx";
 
 export default function Register() {
     const navigate = useNavigate();
@@ -45,7 +44,6 @@ export default function Register() {
                             </p>
                             <div className="flex justify-center gap-5">
                                 <button className="btn btn-primary"><Link to="/login">Login</Link></button>
-                                <button className="btn btn-accent"><Link to="/">Kembali</Link></button>
                             </div>
                             </div>
                             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

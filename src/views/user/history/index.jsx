@@ -8,7 +8,7 @@ export default function History() {
     const [history, setHistory] = useState([]);
     const [displayedHistory, setDisplayedHistory] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
 
@@ -47,9 +47,6 @@ export default function History() {
         }
     };
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
-
     const deletePredict = async (id) => {
         const token = Cookies.get('token');
         if (token) {
@@ -68,10 +65,16 @@ export default function History() {
     return (
         <div>
             <NavbarMenu />
-            <div className='mb-10'>
+            <div className='mb-10' data-theme="cupcake">
                 <div className='text-center font-semibold text-2xl mb-5'>
                     <h1>History</h1>
                 </div>
+
+                {loading && (
+                    <div className="flex justify-center items-center py-4">
+                        <p>Loading...</p>
+                    </div>
+                )}
 
                 <div>
                     {displayedHistory.map((item, index) => (
