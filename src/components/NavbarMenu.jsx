@@ -58,11 +58,10 @@ export default function NavbarMenu() {
                                     <Link to="/user/about">About</Link>
                                 </div>
                             </li>
-                            <li className={`text-lg font-semibold ${location.pathname === '/user/about' ? 'bg-primary text-white rounded-lg' : ''}`}>
-                                <div className="mt-10">
-                                    <a onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
-                                </div>
-                            </li>
+
+                            <div className="mt-10 btn">
+                                <a onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
+                            </div>
                         </ul>
                     </div>
                     <div className="flex ml-20">

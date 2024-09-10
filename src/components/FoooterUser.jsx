@@ -9,18 +9,18 @@ export default function FooterUser({ children }) {
             </main>
             <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">
+                    <div className="link link-hover">
                         <Link to={'/user/home'}>Home</Link>
-                    </a>
-                    <a className="link link-hover">
+                    </div>
+                    <div className="link link-hover">
                         <Link to={'/user/predict'}>Predict</Link>
-                    </a>
-                    <a className="link link-hover">
+                    </div>
+                    <div className="link link-hover">
                         <Link to={'/user/history'}>History</Link>
-                    </a>
-                    <a className="link link-hover">
+                    </div>
+                    <div className="link link-hover">
                         <Link to={'/user/about'}>About</Link>
-                    </a>
+                    </div>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">

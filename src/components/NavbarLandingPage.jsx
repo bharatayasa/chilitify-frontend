@@ -89,9 +89,9 @@ function NavbarLandingPage() {
                 <div className="navbar-end">
                     <div className="hidden md:flex mr-20">
                         <span>
-                            <a className="btn">
+                            <div className="btn">
                                 <RouterLink to={'/login'}>Login</RouterLink>
-                            </a>
+                            </div>
                         </span>
                     </div>
                 </div>

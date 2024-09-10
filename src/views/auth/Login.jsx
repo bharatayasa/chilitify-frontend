@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import Cookies from 'js-cookie'
 import { AuthContext } from '../../context/AuthContext';
-import NavbarLandingPage from "../../components/NavbarLandingPage.jsx";
 
 export default function Login() {
     const navigate = useNavigate();

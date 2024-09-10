@@ -79,42 +79,44 @@ export default function History() {
                 <div>
                     {displayedHistory.map((item, index) => (
                         <div key={index} className='mb-2'>
-                            <div className="collapse collapse-arrow border-base-300 border lg:w-[50%] w-[90%] mx-auto">
-                                <input
-                                    type="checkbox"
-                                    id={`accordion-item-${index}`}
-                                    className="peer hidden"
-                                />
-                                <label htmlFor={`accordion-item-${index}`} className='collapse-title bg-primary/10 cursor-pointer shadow-lg'>
-                                    <div className='flex justify-between'>
-                                        <div>
-                                            <p><strong>Class:</strong> {item.class}</p>
+                            <div className="flex flex-col items-center mx-3 lg:mx-[400px]">
+                                <div className='collapse collapse-arrow'>
+                                    <input
+                                        type="checkbox"
+                                        id={`accordion-item-${index}`}
+                                        className="peer hidden"
+                                    />
+                                    <label htmlFor={`accordion-item-${index}`} className='collapse-title bg-primary/10 cursor-pointer shadow-lg'>
+                                        <div className='flex justify-between'>
+                                            <div>
+                                                <p><strong>Class:</strong> {item.class}</p>
+                                            </div>
+                                            <div className='text-sm'>
+                                                <p>{item.created_at}</p>
+                                            </div>
                                         </div>
-                                        <div className='text-sm'>
-                                            <p>{item.created_at}</p>
+                                    </label>
+
+                                    <div className="collapse-content flex flex-col justify-center items-center">
+                                        <div className='w-80 h-80 my-5'>
+                                            <img src={item.image_url} alt={`Prediction ${index}`} className='w-full h-full object-cover shadow-lg rounded-lg'/>
                                         </div>
-                                    </div>
-                                </label>
 
-                                <div className="collapse-content flex flex-col items-center">
-                                    <div className='w-80 h-80 my-5'>
-                                        <img src={item.image_url} alt={`Prediction ${index}`} className='w-full h-full object-cover shadow-lg'/>
-                                    </div>
+                                        <div className='mb-5'>
+                                            <p><strong className='font-semibold text-primary'>Confidence:</strong> {item.confidence}</p>
+                                        </div>
 
-                                    <div className='mb-5'>
-                                        <p><strong className='font-semibold text-primary'>Confidence:</strong> {item.confidence}</p>
-                                    </div>
+                                        <div className='text-justify lg:mx-5 py-5 px-5 bg-primary/10 rounded-md mb-5 shadow-lg'>
+                                            <p><strong className='font-semibold text-primary'>Description: </strong>{item.description}</p>
+                                        </div>
 
-                                    <div className='text-justify lg:mx-5 py-5 px-5 bg-primary/10 rounded-md mb-5 shadow-lg'>
-                                        <p><strong className='font-semibold text-primary'>Description: </strong>{item.description}</p>
-                                    </div>
-
-                                    <div className='text-justify lg:mx-5 py-5 px-5 bg-primary/10 rounded-md mb-5 shadow-lg'>
-                                        <p><strong className='font-semibold text-primary'>Prevention:</strong> {item.prevention}</p>
-                                    </div>
-                                    
-                                    <div className='text-center mt-2'>
-                                        <button onClick={() => deletePredict(item.id)} className="btn btn-outline btn-secondary">Remove</button>
+                                        <div className='text-justify lg:mx-5 py-5 px-5 bg-primary/10 rounded-md mb-5 shadow-lg'>
+                                            <p><strong className='font-semibold text-primary'>Prevention:</strong> {item.prevention}</p>
+                                        </div>
+                                        
+                                        <div className='text-center mt-2'>
+                                            <button onClick={() => deletePredict(item.id)} className="btn btn-outline btn-secondary">Remove</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -123,8 +125,8 @@ export default function History() {
 
                     <div className='text-center mt-4'>
                         {history.length > displayedHistory.length && (
-                            <button onClick={handleNextPage} className='btn'>
-                                Berikutnya
+                            <button onClick={handleNextPage} className='btn btn-primary'>
+                                Lainya
                             </button>
                         )}
                     </div>

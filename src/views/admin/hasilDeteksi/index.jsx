@@ -151,7 +151,9 @@ export default function HasilDeteksi() {
                                                 <td className="px-5 py-3 truncate text-pretty">{prediction.confidence}</td>
 
                                                 <td className="px-5 py-3">
-                                                    <img src={prediction.image_url} />
+                                                    <div className='w-20 h-20 my-5'>
+                                                        <img src={prediction.image_url} className='w-full h-full object-cover shadow-lg rounded-lg' />
+                                                    </div>
                                                 </td>
 
                                                 <td className="px-5 py-3 truncate">

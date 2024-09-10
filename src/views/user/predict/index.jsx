@@ -70,8 +70,10 @@ export default function Predict() {
 
             {response && (
                 <div>
-                    <div className='flex justify-center my-5'>
-                        <img src={response.image_url} alt="Prediction" />
+                    <div className='flex justify-center'>
+                        <div className='w-80 h-80 my-5'>
+                            <img src={response.image_url} alt="Prediction" className='w-full h-full object-cover shadow-lg rounded-lg' />
+                        </div>
                     </div>
 
                     <div className='flex flex-col gap-5 px-4 md:px-8 lg:px-52'>
