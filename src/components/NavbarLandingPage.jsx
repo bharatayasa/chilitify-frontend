@@ -58,17 +58,10 @@ function NavbarLandingPage() {
                             <li className={`text-lg ${activeSection === 'algoritma' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
                                 <ScrollLink to="algoritma" smooth={true} duration={500}>Algoritma</ScrollLink>
                             </li>
-                            <div className="mt-20 mb-5 flex justify-center">
-                                <span>
-                                    <div className='btn'>
-                                        <RouterLink to={'/login'}>Login</RouterLink>
-                                    </div>
-                                </span>
-                            </div>
                         </ul>
                     </div>
                     <div className="flex ml-20">
-                        <a className="text-xl font-extrabold">Chilitify</a>
+                        <p className="text-2xl font-extrabold">Chilitify</p>
                     </div>
                 </div>
 
@@ -88,11 +81,11 @@ function NavbarLandingPage() {
 
                 <div className="navbar-end">
                     <div className="hidden md:flex mr-20">
-                        <span>
+                        {/* <span>
                             <div className="btn">
                                 <RouterLink to={'/login'}>Login</RouterLink>
                             </div>
-                        </span>
+                        </span> */}
                     </div>
                 </div>
             </div>
