@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import api from '../../service/api.js'
 import Cookies from 'js-cookie'
 import { AuthContext } from '../../context/AuthContext';
+import show from '../../assets/svg/show.svg'
+import hide from '../../assets/svg/hode.svg'
 
 export default function Login() {
     const navigate = useNavigate();
@@ -13,6 +15,8 @@ export default function Login() {
 
     const [validation, setValidation] = useState([]);
     const [loginFailed, setLoginFailed] = useState([]);
+
+    const [showPassword, setShowPassword] = useState(false);
 
     const login = async (e) => {
         e.preventDefault();
@@ -48,20 +52,8 @@ export default function Login() {
     return (
             <div>
                 <div className="hero bg-base-200 min-h-screen">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
-                        <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-                        <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <div className="flex justify-center gap-5">
-                            <button className="btn btn-primary"><Link to="/register">Register</Link></button>
-                            <button className="btn btn-accent"><Link to="/">Kembali</Link></button>
-                        </div>
-                        </div>
+                    <div className="hero-content flex-col">
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-
                         {
                             validation.errors && (
                                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
@@ -83,24 +75,56 @@ export default function Login() {
                             )
                         }
 
-                        <form className="card-body" onSubmit={login}>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Username</span>
-                                </label>
-                                <input className="input input-bordered" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input className="input input-bordered" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                            </div>
-                            <div className="form-control mt-6">
-                                <button type="submit" className="btn btn-primary">Login</button>
-                            </div>
-                        </form>
+                            <form className="card-body" onSubmit={login}>
+                                <div className="text-xl text-center font-semibold px-36">
+                                    <h1>Login</h1>
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Username</span>
+                                    </label>
+                                    <input className="input input-bordered" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span>
+                                    </label>
+                                    <div className="relative">
+                                        <input
+                                            className="input input-bordered w-full"
+                                            type={showPassword ? "text" : "password"}
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            placeholder="Password"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs"
+                                        >
+                                            {showPassword ? 
+                                                <img src={hide} alt="" className="w-5" /> :
+                                                <img src={show} alt="" className="w-5" />
+                                            }
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="form-control mt-6">
+                                        <button type="submit" className="btn btn-primary">Login</button>
+                                </div>
+
+                                <div className="form-control">
+                                    <div className="mt-10 text-center flex flex-col gap-5">
+                                        <div className=""><Link to="/register">Belum punya akun..? <span className="text-sky-600">Daftar</span></Link></div>
+                                        <div className=""><Link to="/"> <span className="text-sky-600">Kembali</span></Link></div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+
                     </div>
                 </div>
             </div>
