@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function FooterUser({ children }) {
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className=" flex flex-col">
             <main className="flex-grow">
                 {children}
             </main>

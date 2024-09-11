@@ -79,7 +79,7 @@ export default function History() {
                 <div>
                     {displayedHistory.map((item, index) => (
                         <div key={index} className='mb-2'>
-                            <div className="flex flex-col items-center mx-3 lg:mx-[400px]">
+                            <div className="flex flex-col items-center mx-3 lg:mx-[400px] shadow-lg bg-primary/5 rounded-2xl">
                                 <div className='collapse collapse-arrow'>
                                     <input
                                         type="checkbox"
