@@ -198,7 +198,11 @@ export default function UserList() {
                                             <td className="px-6 py-4 text-center">
                                                 <div className='flex justify-center gap-3'>
                                                     <button onClick={() => handleEditClick(user.id)} className="btn btn-outline btn-primary">Edit</button>
-                                                    <button onClick={() => deleteUser(user.id)} className="btn btn-outline btn-secondary">nonaktif</button>
+                                                    <button onClick={() => {
+                                                        if (window.confirm("Apakah Anda yakin ingin menonaktifkan user ini?")) {
+                                                                deleteUser(user.id);
+                                                            }
+                                                        }} className="btn btn-outline btn-secondary">Nonaktif</button>
                                                     <button onClick={() => restoreUser(user.id)} className="btn btn-outline btn-success">aktif</button>
                                                 </div>
                                             </td>

@@ -4,7 +4,6 @@ import Cookies from 'js-cookie'
 import ChartTotalClass from './ChartTotalClass';
 import TotalData from './TotalData';
 import TotalPredictNow from './totalPredictNow';
-import FooterAdmin from '../../../components/FooterAdmin';
 
 export default function Dashboard() {
     const [username, setUsername] = useState([]);

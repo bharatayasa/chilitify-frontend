@@ -115,7 +115,11 @@ export default function History() {
                                         </div>
                                         
                                         <div className='text-center mt-2'>
-                                            <button onClick={() => deletePredict(item.id)} className="btn btn-outline btn-secondary">Remove</button>
+                                            <button onClick={() => {
+                                                if (window.confirm("Apakah Anda yakin ingin menghapus history ini?")) {
+                                                deletePredict(item.id);
+                                                }
+                                            }} className="btn btn-outline btn-secondary">Hapus</button>
                                         </div>
                                     </div>
                                 </div>

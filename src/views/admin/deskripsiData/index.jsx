@@ -190,7 +190,11 @@ export default function DeskripsiData() {
                                                         <div className='flex flex-col gap-2'>
                                                             <button onClick={() => restoreDescription(description.id)} className="btn btn-outline btn-success">Restore</button>
                                                             <button onClick={() => handleEditClick(description.id)} className="btn btn-outline btn-primary">Edit</button>
-                                                            <button onClick={() => deleteDescription(description.id)} className="btn btn-outline btn-secondary">Nonaktif</button>
+                                                            <button onClick={() => {
+                                                                if (window.confirm("Apakah Anda yakin ingin menonaktifkan deskripsi ini?")) {
+                                                                    deleteDescription(description.id);
+                                                                }
+                                                            }} className="btn btn-outline btn-secondary">Nonaktif</button>
                                                         </div>
                                                     </div>
                                                 </td>
