@@ -13,7 +13,7 @@ function Banner() {
                 <div className="hero-content text-neutral-content text-center">
                     <div className="">
                     <h1 className="mb-5 text-5xl font-bold">Chillitify Web App</h1>
-                    <p className="mb-5 text-justify bg-black/5 backdrop-blur-xl px-5 py-5 rounded-lg shadow-xl text-xl lg:mx-32 font-extrabold">
+                    <p className="mb-5 text-justify bg-black/5 backdrop-blur-xl px-5 py-5 rounded-lg shadow-xl text-xl lg:mx-32">
                         Chillitify adalah web app yang memanfaatkan Machine Learning untuk memprediksi penyakit pada tanaman cabai. Pengguna dapat mengunggah foto daun cabai, dan sistem akan menganalisis serta mengidentifikasi penyakitnya, membantu petani menangani masalah secara cepat.
                     </p>
                         <div className='flex gap-5 justify-center'>

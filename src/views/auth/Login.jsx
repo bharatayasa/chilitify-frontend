@@ -76,7 +76,7 @@ export default function Login() {
                         }
 
                             <form className="card-body" onSubmit={login}>
-                                <div className="text-xl text-center font-semibold px-36">
+                                <div className="text-xl text-center font-semibold lg:px-36 px-28">
                                     <h1>Login</h1>
                                 </div>
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 function NavbarLandingPage() {
@@ -68,7 +67,7 @@ function NavbarLandingPage() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 lg:flex lg:gap-5">
                         <li className={`text-lg ${activeSection === 'about' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
-                            <ScrollLink to="about" smooth={true} duration={500}>About</ScrollLink>
+                            <ScrollLink to="about" smooth={true} duration={500}>Tentang</ScrollLink>
                         </li>
                         <li className={`text-lg ${activeSection === 'dataset' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
                             <ScrollLink to="dataset" smooth={true} duration={500}>Dataset</ScrollLink>

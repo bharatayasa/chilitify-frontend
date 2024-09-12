@@ -70,7 +70,7 @@ export default function Register() {
                                 }
 
                                 <form className="card-body" onSubmit={register}>
-                                    <div className="text-xl text-center font-semibold px-[120px]">
+                                    <div className="text-xl text-center font-semibold lg:px-[120px] px-28">
                                         <h1>Daftar</h1>
                                     </div>
 
