@@ -91,11 +91,18 @@ function Dataset() {
                         </Swiper>
                     </div>
 
-                    <div>
-                        <h1 className="text-5xl font-bold text-center">dataset</h1>
-                        <p className="py-6 text-justify">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    <div className='lg:mt-20'>
+                        <h1 className="text-5xl font-bold text-left">Dataset</h1>
+                        <p className="pb-6 text-justify">
+                        Model machine learning Chillitify dilatih dengan menggunakan dataset berupa gambar daun tanaman cabai yang diperoleh dari Kaggle.com. terdapat 5 kelas penyakit yang 1 diantaranya kelas untuk tanaman cabai yang sehat.
+                        </p>
+                        <h1 className="text-2xl font-bold text-left">2.640 Dataset</h1>
+                        <p className="pb-6 text-justify">
+                            Model dilatih dengan total 2.640 dataset yang di peroleh dari kagle
+                        </p>
+                        <h1 className="text-2xl font-bold text-left">Deskripsi Penyakit & Cara Penanganan</h1>
+                        <p className="pb-6 text-justify">
+                            Deskripsi penyakit dan cara penanganan diulas dari jurnal yang terpublikasi
                         </p>
                     </div>
                 </div>

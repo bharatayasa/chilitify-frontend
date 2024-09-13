@@ -2,6 +2,7 @@ import NavbarLandingPage from "../../components/NavbarLandingPage";
 import Algoritma from "./homeComponents/Algoritma";
 import Banner from "./homeComponents/Banner";
 import Dataset from "./homeComponents/Dataset";
+import Deployment from "./homeComponents/Deployment";
 
 export default function Home() {
     return (
@@ -18,6 +19,9 @@ export default function Home() {
                 </section>
                 <section id="algoritma">
                     <Algoritma />
+                </section>
+                <section id="deployment">
+                    <Deployment />
                 </section>
             </div>
         </div>

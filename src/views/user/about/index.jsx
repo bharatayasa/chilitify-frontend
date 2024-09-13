@@ -2,7 +2,7 @@ import React from 'react'
 import NavbarMenu from '../../../components/NavbarMenu'
 import Foooter from '../../../components/FoooterUser';
 import Algoritma from "../../home/homeComponents/Algoritma";
-import Banner from "../../home/homeComponents/Banner";
+import BannerAbout from '../../home/homeComponents/BannerAbout';
 import Dataset from "../../home/homeComponents/Dataset";
 
 export default function About() {
@@ -12,7 +12,7 @@ export default function About() {
                 <NavbarMenu />
             </div>
             <div>
-                <Banner />
+                <BannerAbout />
             </div>
             <div>
                 <Dataset />

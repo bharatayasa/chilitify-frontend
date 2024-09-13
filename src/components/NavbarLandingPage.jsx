@@ -6,7 +6,7 @@ function NavbarLandingPage() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ["about", "dataset", "algoritma"];
+            const sections = ["about", "dataset", "algoritma", "deployment"];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             sections.forEach((section) => {
@@ -57,6 +57,10 @@ function NavbarLandingPage() {
                             <li className={`text-lg ${activeSection === 'algoritma' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
                                 <ScrollLink to="algoritma" smooth={true} duration={500}>Algoritma</ScrollLink>
                             </li>
+
+                            <li className={`text-lg ${activeSection === 'deployment' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
+                                <ScrollLink to="deployment" smooth={true} duration={500}>Deployment</ScrollLink>
+                            </li>
                         </ul>
                     </div>
                     <div className="flex ml-20">
@@ -75,16 +79,15 @@ function NavbarLandingPage() {
                         <li className={`text-lg ${activeSection === 'algoritma' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
                             <ScrollLink to="algoritma" smooth={true} duration={500}>Algoritma</ScrollLink>
                         </li>
+                        <li className={`text-lg ${activeSection === 'deployment' ? 'bg-primary text-white rounded-lg font-semibold' : ''}`}>
+                            <ScrollLink to="deployment" smooth={true} duration={500}>Deployment</ScrollLink>
+                        </li>
                     </ul>
                 </div>
 
                 <div className="navbar-end">
                     <div className="hidden md:flex mr-20">
-                        {/* <span>
-                            <div className="btn">
-                                <RouterLink to={'/login'}>Login</RouterLink>
-                            </div>
-                        </span> */}
+                        
                     </div>
                 </div>
             </div>
