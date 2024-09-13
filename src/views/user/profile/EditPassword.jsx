@@ -42,7 +42,7 @@ export default function EditPassword() {
                 <div>
                         <div className='flex items-center justify-center'>
                             <form className='flex flex-col bg-primary/25 px-5 py-5 rounded-xl' onSubmit={updateBiodata}>
-                                <div className='text-center font-semibold text-2xl px-24'>
+                                <div className='text-center font-semibold text-2xl px-20'>
                                     <h1>Edit Password</h1>
                                 </div>
 
@@ -56,7 +56,7 @@ export default function EditPassword() {
                                             type={showPassword ? "text" : "password"}
                                             value={currentPassword}
                                             onChange={(e) => setCurrentPassword(e.target.value)}
-                                            placeholder="Password Lama"
+                                            placeholder="Masukkan Password Lama"
                                         />
                                         <button
                                             type="button"
@@ -81,7 +81,7 @@ export default function EditPassword() {
                                             type={showPassword1 ? "text" : "password"}
                                             value={newPassword}
                                             onChange={(e) => setNewPassword(e.target.value)}
-                                            placeholder="Password Baru"
+                                            placeholder="Masukkan Password Baru"
                                         />
                                         <button
                                             type="button"
