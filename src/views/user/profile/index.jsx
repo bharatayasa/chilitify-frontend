@@ -64,8 +64,8 @@ export default function Index() {
                                 </div>
 
                                 <div className=' flex gap-5 mt-10'>
-                                    <button className='btn btn-primary'><Link to={'/user/edit/profile'}>Ubah Biodata</Link></button>
-                                    <button className='btn btn-accent'><Link to={'/user/edit/password'}>Ubah Password</Link></button>
+                                    <div className='btn btn-primary'><Link to={'/user/edit/profile'}>Ubah Biodata</Link></div>
+                                    <div className='btn btn-accent'><Link to={'/user/edit/password'}>Ubah Password</Link></div>
                                 </div>
                             </form>
                         </div>

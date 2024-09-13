@@ -13,6 +13,9 @@ export default function EditPassword() {
     const [showPassword, setShowPassword] = useState(false);
     const [showPassword1, setShowPassword1] = useState(false);
 
+    const [validation, setValidation] = useState([]);
+    const [loginFailed, setLoginFailed] = useState([]);
+
     const navigate = useNavigate();
 
     const updateBiodata = async (e) => {
@@ -28,6 +31,8 @@ export default function EditPassword() {
             });
             navigate('/user/profile');
         } catch (error) {
+            setValidation(error.response.data);
+            setLoginFailed(error.response.data);
             console.error(error);
         }
     };
@@ -42,6 +47,26 @@ export default function EditPassword() {
                 <div>
                         <div className='flex items-center justify-center'>
                             <form className='flex flex-col bg-primary/25 px-5 py-5 rounded-xl' onSubmit={updateBiodata}>
+                            {
+                                validation.errors && (
+                                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                                        {
+                                            validation.errors.map((error, index) => (
+                                                <p className="text-sm" key={index}>{error.path} : {error.msg}</p>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            }
+                            {
+                                loginFailed.message && (
+                                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                                        <p className="text-sm">
+                                            {loginFailed.message}
+                                        </p>
+                                    </div>
+                                )
+                            }
                                 <div className='text-center font-semibold text-2xl px-20'>
                                     <h1>Edit Password</h1>
                                 </div>
