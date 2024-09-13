@@ -126,7 +126,7 @@ export default function UserList() {
                 <div>
                     <div className='btn btn-outline btn-success shadow-lg w-[106px]'>
                         <div onClick={openModal}>
-                            Add User
+                            Tambah User
                         </div>
                     </div>
                     <AddUser isOpen={isModalOpen} onClose={handleModalClose} />
@@ -203,7 +203,7 @@ export default function UserList() {
                                                                 deleteUser(user.id);
                                                             }
                                                         }} className="btn btn-outline btn-secondary">Nonaktif</button>
-                                                    <button onClick={() => restoreUser(user.id)} className="btn btn-outline btn-success">aktif</button>
+                                                    <button onClick={() => restoreUser(user.id)} className="btn btn-outline btn-success">Aktif</button>
                                                 </div>
                                             </td>
                                         </tr>

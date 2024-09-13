@@ -3,6 +3,7 @@ import Algoritma from "./homeComponents/Algoritma";
 import Banner from "./homeComponents/Banner";
 import Dataset from "./homeComponents/Dataset";
 import Deployment from "./homeComponents/Deployment";
+import FooterLandingPage from "./homeComponents/FooterLandingPage";
 
 export default function Home() {
     return (
@@ -22,6 +23,9 @@ export default function Home() {
                 </section>
                 <section id="deployment">
                     <Deployment />
+                </section>
+                <section>
+                    <FooterLandingPage />
                 </section>
             </div>
         </div>

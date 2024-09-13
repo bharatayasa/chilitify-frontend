@@ -2,12 +2,14 @@ import React from 'react'
 
 export default function Algoritma() {
     return (
-        <div id='#algoritma' className='-mt-20'>
+        <div className='lg:-mt-20'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img
-                        src="https://storage.cloud.google.com/image_chillitify/web-asset/cabai2.jpeg"
-                        className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
+                    <div className='mt-20'>
+                        <img
+                            src="https://storage.cloud.google.com/image_chillitify/web-asset/cabai2.jpeg"
+                            className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
+                    </div>
                     <div>
                         <h1 className="text-5xl font-bold text-center pb-5">Algoritma CNN</h1>
                         <h1 className="text-2xl font-bold">Arsitektur Densenet</h1>

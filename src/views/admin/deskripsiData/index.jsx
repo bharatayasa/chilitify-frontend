@@ -115,7 +115,7 @@ export default function DeskripsiData() {
                     <div>
                         <div className='btn btn-outline btn-success shadow-lg w-[106px]'>
                             <div onClick={openModal}>
-                                Add Description
+                                Tambah Deskripsi
                             </div>
                         </div>
                         <CreateDeskripsi isOpen={isModalOpen} onClose={handleModalClose}/>
@@ -181,7 +181,7 @@ export default function DeskripsiData() {
                                                         <p>Updated: </p>{description.updated_at}
                                                     </div>
                                                     <div className='flex gap-2 text-secondary'>
-                                                        <p>nonaktif: </p>{description.deleted_at}
+                                                        <p>Nonaktif: </p>{description.deleted_at}
                                                     </div>
                                                 </td>
 

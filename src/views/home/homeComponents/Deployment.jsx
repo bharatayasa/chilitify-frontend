@@ -6,12 +6,12 @@ export default function Deployment() {
         <div id='#deployment' className='-mt-20'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row gap-20">
-                    <div>
-                        <img src={arsitektur} className="max-w-sm rounded-lg shadow-2xl" />
+                    <div className='mt-20 lg:mt-0'> 
+                        <img src={arsitektur} className="lg:max-w-sm rounded-lg shadow-2xl"/>
                     </div>
-                    <div className='flex flex-col gap-2 w-[50%]'>
+                    <div className='flex flex-col gap-2 lg:w-[50%] w-[100%]'>
 
-                        <div className="collapse collapse-arrow bg-base-200">
+                        <div className="collapse collapse-arrow bg-primary/10">
                             <input type="radio" name="my-accordion-2" defaultChecked />
                             <div className="collapse-title text-xl font-medium">Cloud Run</div>
                             <div className="collapse-content">
@@ -21,7 +21,7 @@ export default function Deployment() {
                             </div>
                         </div>
 
-                        <div className="collapse collapse-arrow bg-base-200">
+                        <div className="collapse collapse-arrow bg-primary/10">
                             <input type="radio" name="my-accordion-2" defaultChecked />
                             <div className="collapse-title text-xl font-medium">Bucket</div>
                             <div className="collapse-content">
@@ -31,7 +31,7 @@ export default function Deployment() {
                             </div>
                         </div>
 
-                        <div className="collapse collapse-arrow bg-base-200">
+                        <div className="collapse collapse-arrow bg-primary/10">
                             <input type="radio" name="my-accordion-2" defaultChecked />
                             <div className="collapse-title text-xl font-medium">Cloud Sql</div>
                             <div className="collapse-content">
@@ -41,7 +41,7 @@ export default function Deployment() {
                             </div>
                         </div>
 
-                        <div className="collapse collapse-arrow bg-base-200">
+                        <div className="collapse collapse-arrow bg-primary/10">
                             <input type="radio" name="my-accordion-2" defaultChecked />
                             <div className="collapse-title text-xl font-medium">Container Registry</div>
                             <div className="collapse-content">
