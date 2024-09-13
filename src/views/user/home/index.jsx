@@ -17,13 +17,15 @@ export default function Home() {
                                 src="https://storage.googleapis.com/image_chillitify/web-asset/cabai.jpeg"
                                 className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
                             <div>
-                            <h1 className="text-5xl font-bold">Welcome To Chillitify</h1>
-                            <p className="py-6">
-                                Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk hasil panen yang lebih sehat.
-                            </p>
-                            <div className='flex justify-center gap-5'>
-                                <Link to={'/user/predict'} className="btn btn-primary">Predict</Link>
-                            </div>
+                                <h1 className="text-5xl font-bold">Welcome To Chillitify</h1>
+                                <p className="py-6">
+                                    Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk hasil panen yang lebih sehat.
+                                </p>
+                                <div className='flex justify-center gap-5'>
+                                    <div>
+                                        <Link to={'/user/predict'} className="btn btn-primary">Predict</Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

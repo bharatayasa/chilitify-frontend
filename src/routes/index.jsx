@@ -18,6 +18,10 @@ import Predict from '../views/user/predict/index.jsx';
 import History from '../views/user/history/index.jsx';
 import About from '../views/user/about/index.jsx';
 
+import Profile from '../../src/views/user/profile/index.jsx'
+import EditProfile from '../../src/views/user/profile/EditProfile.jsx'
+import EditPassword from '../views/user/profile/EditPassword.jsx';
+
 export default function AppRoutes() {
     const { isAuthenticated, userRole } = useContext(AuthContext);
 
@@ -59,6 +63,16 @@ export default function AppRoutes() {
             } />
             <Route path="/user/about" element={
                 isAuthenticated && userRole === 'user' ? <About /> : <Navigate to="/login" replace />
+            } />
+
+            <Route path="/user/profile" element={
+                isAuthenticated && userRole === 'user' ? <Profile /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/user/edit/profile" element={
+                isAuthenticated && userRole === 'user' ? <EditProfile /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/user/edit/password" element={
+                isAuthenticated && userRole === 'user' ? <EditPassword /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );
