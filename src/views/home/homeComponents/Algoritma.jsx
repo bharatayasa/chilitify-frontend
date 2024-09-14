@@ -7,7 +7,7 @@ export default function Algoritma() {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='mt-20'>
                         <img
-                            src="https://storage.cloud.google.com/image_chillitify/web-asset/cabai2.jpeg"
+                            src="https://storage.googleapis.com/image_chillitify/web-asset/cabai2.jpeg"
                             className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
                     </div>
                     <div>

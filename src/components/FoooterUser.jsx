@@ -23,7 +23,7 @@ export default function FooterUser({ children }) {
                     </div>
                 </nav>
                 <div className=''>
-                    <p className='text-center w-96'>
+                    <p className='text-center lg:w-96'>
                         Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk hasil panen yang lebih sehat.
                     </p>
                 </div>
