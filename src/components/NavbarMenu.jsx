@@ -2,7 +2,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import React, { useContext } from "react";
 import Cookies from "js-cookie";
 import { AuthContext } from "../context/AuthContext";
-import profile from '../assets/svg/profile.svg'
 
 export default function NavbarMenu() {
     const location = useLocation();
