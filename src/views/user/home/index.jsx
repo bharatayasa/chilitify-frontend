@@ -21,7 +21,7 @@ export default function Home() {
                                 <p className="text-justify">
                                     Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk mencegah penyebaran dan memastikan hasil panen yang lebih sehat. Dapatkan solusi cepat dan mudah untuk menjaga kualitas tanaman Anda!
                                 </p>
-                                <div className='flex justify-center gap-5'>
+                                <div className='flex justify-center gap-5 mt-20'>
                                     <div>
                                         <Link to={'/user/predict'} className="btn btn-primary">Prediksi Sekarang</Link>
                                     </div>
