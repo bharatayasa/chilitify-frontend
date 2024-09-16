@@ -124,7 +124,7 @@ export default function UserList() {
                 </h1>
 
                 <div>
-                    <div className='btn btn-outline btn-success shadow-lg w-[106px]'>
+                    <div className='btn btn-outline btn-success shadow-lg w-[130px]'>
                         <div onClick={openModal}>
                             Tambah User
                         </div>
@@ -140,10 +140,10 @@ export default function UserList() {
                             onChange={(e) => setSearchCategory(e.target.value)}
                             className="input input-bordered join-item mr-1 shadow-lg"
                         >
-                            <option value="username">username</option>
-                            <option value="name">name</option>
-                            <option value="email">e-mail</option>
-                            <option value="role">role</option>
+                            <option value="username">Username</option>
+                            <option value="name">Name</option>
+                            <option value="email">Email</option>
+                            <option value="role">Role</option>
                         </select>
                         <input
                             type="text"

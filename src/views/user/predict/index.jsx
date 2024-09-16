@@ -81,7 +81,7 @@ export default function Predict() {
                             <div className='text-justify bg-primary/10 rounded-md shadow-lg p-4 flex justify-between mt-5'>
                                 <div>
                                     <p><strong className='font-semibold text-primary'>Class:</strong> {response.data.class}</p>
-                                    <p><strong className='font-semibold text-primary'>Confidence:</strong> {response.confidence}</p>
+                                    <p><strong className='font-semibold text-primary'>Confidence:</strong> {`${response.confidence} / 1`}</p>
                                     <p><strong className='font-semibold text-primary'>Description:</strong> {response.data.description}</p>
                                 </div>
                             </div>

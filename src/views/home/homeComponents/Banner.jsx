@@ -6,8 +6,8 @@ function Banner() {
         <div className='lg:-mt-20'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className='lg:w-full lg:h-full'>
-                    <img src="https://storage.googleapis.com/image_chillitify/web-asset/ML-cabai.jpeg" className='w-full h-full object-cover shadow-lg rounded-lg' />
+                    <div className='w-full h-full mt-20'>
+                        <img src="https://storage.googleapis.com/image_chillitify/web-asset/ML-cabai.jpeg" className='w-full h-full object-cover shadow-lg rounded-lg' />
                     </div>
 
                     <div>

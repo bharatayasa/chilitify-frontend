@@ -91,8 +91,8 @@ function Dataset() {
                         </Swiper>
                     </div>
 
-                    <div className='lg:mt-20'>
-                        <h1 className="text-5xl font-bold text-left">Dataset</h1>
+                    <div className='lg:mt-24'>
+                        <h1 className="text-5xl font-bold text-left mb-5">Dataset</h1>
                         <p className="pb-6 text-justify">
                         Model machine learning Chillitify dilatih dengan menggunakan dataset berupa gambar daun tanaman cabai yang diperoleh dari Kaggle.com. terdapat 5 kelas penyakit yang 1 diantaranya kelas untuk tanaman cabai yang sehat.
                         </p>

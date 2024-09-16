@@ -122,7 +122,7 @@ export default function Login() {
 
                             <div className="form-control">
                                 <div className="mt-10 text-center flex flex-col gap-5">
-                                    <div><Link to="/register">Belum punya akun..? <span className="text-sky-600">Daftar</span></Link></div>
+                                    <div><Link to="/register">Belum punya akun..? <span className="text-sky-600">Register</span></Link></div>
                                     <div><Link to="/"> <span className="text-sky-600">Kembali</span></Link></div>
                                 </div>
                             </div>

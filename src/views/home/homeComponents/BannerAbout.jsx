@@ -6,7 +6,7 @@ function BannerAbout() {
         <div className='lg:-mt-20'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className='w-full h-full'>
+                    <div className='w-full h-full mt-20'>
                         <img src="https://storage.googleapis.com/image_chillitify/web-asset/ML-cabai.jpeg" className='w-full h-full object-cover shadow-lg rounded-lg' />
                     </div>
 

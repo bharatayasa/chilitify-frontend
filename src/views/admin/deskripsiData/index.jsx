@@ -113,7 +113,7 @@ export default function DeskripsiData() {
                     </h1>
 
                     <div>
-                        <div className='btn btn-outline btn-success shadow-lg w-[106px]'>
+                        <div className='btn btn-outline btn-success shadow-lg w-[170px]'>
                             <div onClick={openModal}>
                                 Tambah Deskripsi
                             </div>
@@ -128,8 +128,8 @@ export default function DeskripsiData() {
                                 value={searchCategory}
                                 onChange={(e) => setSearchCategory(e.target.value)}
                                 className="input input-bordered join-item mr-1 shadow-lg">
-                                <option value="calss">class</option>
-                                <option value="description">description</option>
+                                <option value="calss">Class</option>
+                                <option value="description">Description</option>
                             </select>
                             <input
                                 type="text"

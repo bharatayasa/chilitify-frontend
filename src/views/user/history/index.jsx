@@ -103,7 +103,7 @@ export default function History() {
                                         </div>
 
                                         <div className='mb-5'>
-                                            <p><strong className='font-semibold text-primary'>Confidence:</strong> {item.confidence}</p>
+                                            <p><strong className='font-semibold text-primary'>Confidence:</strong> {`${item.confidence} / 1`}</p>
                                         </div>
 
                                         <div className='text-justify lg:mx-5 py-5 px-5 bg-primary/10 rounded-md mb-5 shadow-lg'>

@@ -71,7 +71,7 @@ export default function Register() {
 
                                 <form className="card-body" onSubmit={register}>
                                     <div className="text-xl text-center font-semibold lg:px-[120px] px-28">
-                                        <h1>Daftar</h1>
+                                        <h1>Register</h1>
                                     </div>
 
                                     <div className="form-control">
@@ -121,7 +121,7 @@ export default function Register() {
                                 </div>
 
                                     <div className="form-control mt-6">
-                                        <button type="submit" className="btn btn-primary">Daftar</button>
+                                        <button type="submit" className="btn btn-primary">Register</button>
                                     </div>
 
                                     <div className="mt-10 text-center flex flex-col gap-5">

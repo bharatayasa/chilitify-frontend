@@ -13,19 +13,23 @@ export default function Home() {
                 <div>
                     <div className="hero lg:min-h-screen mt-20 lg:-mt-20">
                         <div className="hero-content flex-col lg:flex-row">
-                            <img
-                                src="https://storage.googleapis.com/image_chillitify/web-asset/cabai.jpeg"
-                                className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
                             <div>
-                                <h1 className="text-5xl font-bold">Welcome To Chillitify</h1>
-                                <p className="py-6">
-                                    Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk hasil panen yang lebih sehat.
+                                <h1 className="text-5xl font-bold text-center">Welcome To Chillitify</h1>
+                                <h3 className='py-3 text-left text-xl font-semibold lg:mt-20'>
+                                    Solusi Mudah Untuk Mendeteksi Penyakit Cabai
+                                </h3>
+                                <p className="text-justify">
+                                    Cegah kerusakan tanaman cabai Anda! Unggah foto dan prediksi penyakitnya sekarang untuk mencegah penyebaran dan memastikan hasil panen yang lebih sehat. Dapatkan solusi cepat dan mudah untuk menjaga kualitas tanaman Anda!
                                 </p>
                                 <div className='flex justify-center gap-5'>
                                     <div>
-                                        <Link to={'/user/predict'} className="btn btn-primary">Predict</Link>
+                                        <Link to={'/user/predict'} className="btn btn-primary">Prediksi Sekarang</Link>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div>
+                                <img src="https://storage.googleapis.com/image_chillitify/web-asset/cabai.jpeg" className="max-w-xs lg:max-w-sm rounded-lg shadow-2xl" />
                             </div>
                         </div>
                     </div>

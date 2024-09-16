@@ -7,6 +7,7 @@ export default function Deployment() {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row gap-20">
                     <div className='mt-20 lg:mt-0'> 
+                        <h1 className='text-center text-xl font-semibold py-5'>Arsitektur Cloud Computing</h1>
                         <img src={arsitektur} className="lg:max-w-sm rounded-lg shadow-2xl"/>
                     </div>
                     <div className='flex flex-col gap-2 lg:w-[50%] w-[100%]'>
