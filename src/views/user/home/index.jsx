@@ -14,7 +14,7 @@ export default function Home() {
                     <div className="hero lg:min-h-screen mt-20 lg:-mt-20">
                         <div className="hero-content flex-col lg:flex-row">
                             <div>
-                                <h1 className="text-5xl font-bold text-center">Welcome To Chillitify</h1>
+                                <h1 className="text-5xl font-bold text-center">Welcome to Chillitify</h1>
                                 <h3 className='py-3 text-left text-xl font-semibold lg:mt-20'>
                                     Solusi Mudah Untuk Mendeteksi Penyakit Cabai
                                 </h3>
