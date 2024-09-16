@@ -67,7 +67,7 @@ export default function EditProfile() {
                         <div className='flex items-center justify-center'>
                             <form className='flex flex-col bg-primary/25 px-5 py-5 rounded-xl' onSubmit={updateBiodata}>
                                 <div className='text-center font-semibold text-2xl px-24'>
-                                    <h1>My Profile</h1>
+                                    <h1>Edit Biodata</h1>
                                 </div>
 
                                 <div className="form-control">
