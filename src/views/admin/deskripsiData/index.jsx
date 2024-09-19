@@ -173,7 +173,7 @@ export default function DeskripsiData() {
                                                     </div>
                                                 </td>
 
-                                                <td className="px-5 py-3 truncate flex flex-col gap-5 pt-14">
+                                                <td className="px-5 py-3 truncate">
                                                     <div className='flex gap-2 text-success'>
                                                         <p>Created: </p>{description.created_at}
                                                     </div>

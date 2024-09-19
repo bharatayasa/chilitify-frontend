@@ -168,7 +168,11 @@ export default function HasilDeteksi() {
                                                 <td className='px-5 py-3 truncat'>
                                                     <div className='flex justify-center'>
                                                         <div className='flex justify-center gap-2'>
-                                                            <button onClick={() => deletePredict(prediction.id)} className="btn btn-outline btn-secondary">Delete</button>
+                                                        <button onClick={() => {
+                                                            if (window.confirm("Apakah Anda yakin ingin menghapus history ini?")) {
+                                                                deletePredict(prediction.id);
+                                                            }
+                                                        }} className="btn btn-outline btn-secondary">Delete</button>
                                                             <button onClick={() => restorePredict(prediction.id)} className="btn btn-outline btn-success">Restore</button>
                                                         </div>
                                                     </div>
